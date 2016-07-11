@@ -82,8 +82,7 @@
 
 		protected function notifyListener($path) {
 			if(isset($this->pathListeners[$path])) {
-				$node = new Crawler;
-				$node->addXmlContent($this->xml->readOuterXML(), $this->encoding);
+				$node = new Crawler($this->xml->expand());
 				$this->pathListeners[$path]($node, $this);
 			}
 
@@ -120,4 +119,3 @@
 		}
 
 	}
-
