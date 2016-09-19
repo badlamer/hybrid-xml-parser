@@ -16,7 +16,8 @@
     "require": {
         "php": ">=5.3.0",
         "ext-libxml": "*",
-        "symfony/dom-crawler": "@stable"
+        "symfony/dom-crawler": "@stable",
+        "symfony/css-selector": "@stable"
     },
     "autoload": {
         "classmap": ["HybridXMLParser.php"]

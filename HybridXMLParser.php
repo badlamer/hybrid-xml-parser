@@ -82,7 +82,10 @@
 
 		protected function notifyListener($path) {
 			if(isset($this->pathListeners[$path])) {
-				$node = new Crawler($this->xml->expand());
+				$tmpNode = $this->xml->expand();
+				$tmpDocument = new DomDocument;
+				$tmpDocument->appendChild($tmpDocument->importNode($tmpNode, true));
+				$node = new Crawler($tmpDocument);
 				$this->pathListeners[$path]($node, $this);
 			}
 
